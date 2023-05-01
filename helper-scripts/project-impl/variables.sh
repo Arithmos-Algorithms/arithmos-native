@@ -9,8 +9,8 @@ mcu_atmega32A="atmega32"
 mcu_atmega328p="atmega328p"
 
 # cmake build caches
-source_dir="$project_root/foobar-core"
-examples_dir="$project_root/foobar-examples"
+source_dir="$project_root/arithmos-core"
+examples_dir="$project_root/arithmos-examples"
 
 # AVR-DUDE properties
 BAUD_RATE='57600'

@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.18.1)
 
 # define a project with a version
-project(foobar VERSION 1.0)
+project(arithmos VERSION 1.0)
 
-message(STATUS "Project: foobar")
+message(STATUS "Project: arithmos")
 message(STATUS "Toolchain: ${TOOLCHAIN_HOME}")
 message(STATUS "Target Hardware: ${TARGET}")
 
 # Cmake variables
-set(library "foobar")
+set(library "arithmos")
 set(CMAKE_C_COMPILER "${TOOLCHAIN_HOME}/bin/avr-gcc")
 set(CMAKE_CXX_COMPILER "${TOOLCHAIN_HOME}/bin/avr-g++")
 set(COMPILER_OPTIONS "-mmcu=${TARGET} -O3")

@@ -2,7 +2,7 @@
 #define _vector2d_H_
 
 #include <math.h>
-#include <vector2d/coordinate.h>
+#include <vectorspaces/coordinate.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,6 +36,10 @@ extern coordinate vector2d_angle(vector2d, vector2d);
 extern coordinate vector2d_length(vector2d);
 
 extern coordinate vector2d_polar(vector2d);
+
+extern vector2d* vector2f_scalar_moduluo(vector2d*, coordinate);
+
+extern coordinate vector2d_distance(vector2d, vector2d);
 
 extern int vector2d_is_dependent(vector2d, vector2d);
 

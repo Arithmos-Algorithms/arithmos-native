@@ -1,4 +1,4 @@
-#include <vector2d/vector2d.h>
+#include <vectorspaces/vector2d/vector2d.h>
 
 vector2d* vector2d_normalize(vector2d* vec) {
     coordinate length = {

@@ -1,3 +1,7 @@
+#ifndef _vector2d_H_ 
+#   error "Use vector2d instead of this!"
+#endif
+
 #ifndef _COORDINATE_H_
 #define _COORDINATE_H_
 

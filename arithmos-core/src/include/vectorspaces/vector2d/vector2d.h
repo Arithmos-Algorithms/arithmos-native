@@ -2,7 +2,7 @@
 #define _vector2d_H_
 
 #include <math.h>
-#include <coordinate.h>
+#include <vector2d/coordinate.h>
 
 #ifdef __cplusplus
 extern "C" {

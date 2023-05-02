@@ -1,4 +1,4 @@
-#include <vector2d.h>
+#include <vector2d/vector2d.h>
 
 coordinate vector2d_polar(vector2d vec) {
     return vector2d_atan2(vec.y, vec.x);

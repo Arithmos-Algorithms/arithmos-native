@@ -1,4 +1,4 @@
-#include <vector2d.h>
+#include <vector2d/vector2d.h>
 
 vector2d vector2d_lerp(vector2d vec0, vector2d vec1, coordinate scale) {
     // 1) find the absolute x_distance and y_distance

@@ -8,7 +8,7 @@ message(STATUS "Toolchain: ${TOOLCHAIN_HOME}")
 message(STATUS "Target Hardware: ${TARGET}")
 
 # Cmake variables
-set(library "arithmos")
+set(library "vector2d")
 set(CMAKE_C_COMPILER "${TOOLCHAIN_HOME}/bin/avr-gcc")
 set(CMAKE_CXX_COMPILER "${TOOLCHAIN_HOME}/bin/avr-g++")
 set(COMPILER_OPTIONS "-mmcu=${TARGET} -O3")

@@ -1,5 +1,5 @@
-#ifndef _vector2d_H_ 
-#   error "Use vector2d instead of this!"
+#if !(defined _vector2d_H_ || defined _vector3d_H_)
+#   error "Use vector2d or vector3d instead of this!"
 #endif
 
 #ifndef _COORDINATE_H_

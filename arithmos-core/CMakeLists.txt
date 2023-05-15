@@ -17,17 +17,21 @@ set(toolchain_headers "${TOOLCHAIN_HOME}/toolchain/include/")
 set(libvector2d "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_add.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_angle.c"  
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_dot_product.c"
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_product.c"
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_subtract.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_distance.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_length.c"
-                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_lerp.c"
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_interpolate.c"
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_extrapolate.c"
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_are_parallel.c"
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_are_perpendicular.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_normalize.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_polar.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_scalar_add.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_scalar_divide.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_scalar_multiply.c"
                 "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_scalar_subtract.c"
-                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_scalar_moduluo.c"
-                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_subtract.c")
+                "${CMAKE_CURRENT_SOURCE_DIR}/src/libvector2d/vector2d_scalar_moduluo.c")
 
 set(headers "${toolchain_headers}"
             "${CMAKE_CURRENT_SOURCE_DIR}/src/include/")

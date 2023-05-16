@@ -5,20 +5,22 @@ project(arithmos-examples VERSION 1.0)
 
 # display external options
 message(STATUS "Project: arithmos-examples")
-message(STATUS "Toolchain: ${TOOLCHAIN_HOME}")
-message(STATUS "Target Hardware: ${TARGET}")
-message(STATUS "Included-library: ${ARITHMOS_LIB}")
+message(STATUS "C compiler: ${C_COMPILER}")
+message(STATUS "CXX compiler: ${CXX_COMPILER}")
+message(STATUS "Toolchain headers: ${TOOLCHAIN_HEADERS}")
+message(STATUS "Compiler Options: ${COMPILER_OPTIONS}")
+message(STATUS "Included-library: ${STATIC_LIB_SOURCE}")
 message(STATUS "Runnable-example: ${EXAMPLE}")
 
 # Cmake variables
 set(elf "${EXAMPLE}.elf")
 
-set(CMAKE_C_COMPILER "${TOOLCHAIN_HOME}/bin/avr-gcc")
-set(CMAKE_CXX_COMPILER "${TOOLCHAIN_HOME}/bin/avr-g++")
-set(COMPILER_OPTIONS "-mmcu=${TARGET}")
+set(CMAKE_C_COMPILER "${C_COMPILER}")
+set(CMAKE_CXX_COMPILER "${CXX_COMPILER}")
+set(COMPILER_OPTIONS "${COMPILER_OPTIONS}")
 
-set(headers "${ARITHMOS_LIB}/src/include")
-set(avr_headers "${TOOLCHAIN_HOME}/include")
+set(headers "${STATIC_LIB_SOURCE}/src/include")
+set(avr_headers "${TOOLCHAIN_HEADERS}")
 
 # C sources
 set(sources "${CMAKE_CURRENT_SOURCE_DIR}/src/${EXAMPLE}")
@@ -32,7 +34,10 @@ set_target_properties(${elf} PROPERTIES COMPILE_FLAGS "${COMPILER_OPTIONS}" LINK
 # include headers for the target
 target_include_directories(${elf} PUBLIC ${avr_headers} ${headers})
 
-target_link_libraries(${elf} "${ARITHMOS_LIB}/build/${TARGET}/libarithmos.a")
+# add all arithmos libraries here
+target_link_libraries(${elf} "${ARITHMOS_LIB}/build/${TARGET}/libvector2d.a")
+# target_link_libraries(${elf} "${ARITHMOS_LIB}/build/${TARGET}/libvector3d.a")
+# target_link_libraries(${elf} "${ARITHMOS_LIB}/build/${TARGET}/libmatrix4x4.a")
 
 # Start building the target
 target_sources(${elf} PUBLIC ${sources})

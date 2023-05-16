@@ -10,7 +10,7 @@ compile "${AVR_C_COMPILER}" \
         "${AVR_CXX_COMPILER}" \
         "${AVR_TOOLCHAIN_HEADERS}" \
         "-mmcu=${target_mcu} -O3" \
-        "${source_dir}" \
         "${target_mcu}" \
+        "${source_dir}" \
         "${example}" \
         "${examples_dir}"

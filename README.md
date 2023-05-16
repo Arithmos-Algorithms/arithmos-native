@@ -1,9 +1,7 @@
-# cmake-template
+# arithmos-native
 
-A template for embedded C libraries development.
+The native portion for arithmos, a high performance maths algorithmic library written purely in C.
 
-This template consists of the following modules: 
-1) foobar-core: for core code, this module gets compiled to a static library.
-2) foobar-examples: for library examples (or your final runnable target).
-
-This template uses the avr toolchain, though you could edit it to use other toolchains, through editing the sandbox environment scripts.
+## This project has 2 modules: 
+- [x] arithmos-core: for core API header and source files.
+- [x] arithmos-examples: for examples and techdemos. 

@@ -9,7 +9,7 @@ message(STATUS "C compiler: ${C_COMPILER}")
 message(STATUS "CXX compiler: ${CXX_COMPILER}")
 message(STATUS "Toolchain headers: ${TOOLCHAIN_HEADERS}")
 message(STATUS "Compiler Options: ${COMPILER_OPTIONS}")
-message(STATUS "Included-library: ${STATIC_LIB_SOURCE}")
+message(STATUS "Included-library: ${STATIC_LIB_DIR}")
 message(STATUS "Runnable-example: ${EXAMPLE}")
 
 # Cmake variables
@@ -19,8 +19,8 @@ set(CMAKE_C_COMPILER "${C_COMPILER}")
 set(CMAKE_CXX_COMPILER "${CXX_COMPILER}")
 set(COMPILER_OPTIONS "${COMPILER_OPTIONS}")
 
-set(headers "${STATIC_LIB_SOURCE}/src/include")
-set(avr_headers "${TOOLCHAIN_HEADERS}")
+set(headers "${STATIC_LIB_DIR}/src/include/")
+set(toolchain_headers "${TOOLCHAIN_HEADERS}")
 
 # C sources
 set(sources "${CMAKE_CURRENT_SOURCE_DIR}/src/${EXAMPLE}")
@@ -32,7 +32,7 @@ add_executable(${elf})
 set_target_properties(${elf} PROPERTIES COMPILE_FLAGS "${COMPILER_OPTIONS}" LINK_FLAGS "${COMPILER_OPTIONS}")
 
 # include headers for the target
-target_include_directories(${elf} PUBLIC ${avr_headers} ${headers})
+target_include_directories(${elf} PUBLIC ${toolchain_headers} ${headers})
 
 # add all arithmos libraries here
 target_link_libraries(${elf} "${ARITHMOS_LIB}/build/${TARGET}/libvector2d.a")

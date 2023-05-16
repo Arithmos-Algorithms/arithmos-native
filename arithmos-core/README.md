@@ -1,13 +1,9 @@
-# foobar-core
+# arithmos-core
 
-This is your core code module, it's compiled into a static library.
+The Core of arithmos-native, this project consists of a couple of sub-projects:
 
-To compile to a target mcu use the following script:
-```bash
-source "./helper-scripts/abstract/abstract-compile.sh"
-source "./helper-scripts/project-impl/variables.sh"
-
-compile ${TOOLCHAIN_HOME} ${mcu_atmega32A} ${source_dir}
-```
-
-Edit the variables at `variables.sh` to satisfy your needs, to get more out of this, add your chip compilation script to `compile-all.sh`.
+- [x] libvector2d: A vector utility in the R(2) vector-space that provides powerful vector operations out of the box.
+- [ ] libvector3d.
+- [ ] libmatrix4x4.
+- [ ] libgebra.
+- [ ] libtrigo. 

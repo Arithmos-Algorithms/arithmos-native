@@ -1,18 +1,22 @@
 #!/bin/bash
 
 function compile() {
-    local TOOLCHAIN_HOME=${1}
-    local TARGET=${2}
-    local source_dir=${3}
-    local FOOBAR_LIB=${4}
-    local EXAMPLE=${5}
+    local C_COMPILER=${1}
+    local CXX_COMPILER=${2}
+    local TOOLCHAIN_HEADERS=${3}
+    local COMPILER_OPTIONS=${4}
+    local TARGET=${5}
+    local STATIC_LIB_SOURCE=${6}
+    local EXAMPLE=${7}
+    local source_dir=${8}
     
     local temp=$(pwd)
     cd ${source_dir}
-    
-    cmake "-DTOOLCHAIN_HOME=${TOOLCHAIN_HOME}" \
-          "-DTARGET=${TARGET}" \
-          "-DFOO_BAR=${FOOBAR_LIB}" \
+    cmake "-DC_COMPILER=${C_COMPILER}" \
+          "-DCXX_COMPILER=${CXX_COMPILER}" \
+          "-DTOOLCHAIN_HEADERS=${TOOLCHAIN_HEADERS}" \
+          "-DCOMPILER_OPTIONS=${COMPILER_OPTIONS}" \
+          "-DSTATIC_LIB_SOURCE=${STATIC_LIB_SOURCE}" \
           "-DEXAMPLE=${EXAMPLE}" \
           -S . -B "./build/${TARGET}"
           

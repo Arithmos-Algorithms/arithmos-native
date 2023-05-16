@@ -8,14 +8,12 @@
 
 vector2d vec0 = {
     0,
-    1,
-    2
+    1
 };
 
 vector2d vec1 = {
     2,
-    3,
-    4
+    3
 };
 
 int main() {

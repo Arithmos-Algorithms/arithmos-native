@@ -6,4 +6,11 @@ source "./helper-scripts/project-impl/variables.sh"
 target_mcu=${1}
 example=${2}
 
-compile ${TOOLCHAIN_HOME} ${target_mcu} ${examples_dir} ${source_dir} ${example}
+compile "${AVR_C_COMPILER}" \
+        "${AVR_CXX_COMPILER}" \
+        "${AVR_TOOLCHAIN_HEADERS}" \
+        "-mmcu=${target_mcu} -O3" \
+        "${target_mcu}" \
+        "${source_dir}" \
+        "${example}" \
+        "${examples_dir}"

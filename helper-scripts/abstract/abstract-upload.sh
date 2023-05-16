@@ -1,13 +1,13 @@
 #!/bin/bash
 
 function convertToHex() {
-     local TOOLCHAIN_HOME=${1}
+     local objcopy=${1}
      local elf=${2} 
      local directory=${3}
      
      temp=$(pwd)
      cd ${directory}   
-  	 ${TOOLCHAIN_HOME}'/bin/avr-objcopy' -O ihex ${elf} ${elf}'.hex'
+  	 ${objcopy} -O ihex ${elf} ${elf}'.hex'
   	 cd $temp
 	 return $?
 }

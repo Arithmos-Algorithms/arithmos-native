@@ -12,4 +12,4 @@ compile "${AVR_C_COMPILER}" \
         "-mmcu=${target_mcu} -O3" \
         "${target_mcu}" \
         "${example}" \
-        "${source_dir}"
+        "${examples_dir}"
